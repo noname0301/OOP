@@ -53,5 +53,14 @@ public class Cart {
 		return cost;
 	}
 	
-	
+	public void print() {
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items:");
+		for (int i = 0; i < qtyOrdered; i++) {
+			System.out.printf("%d. DVD - %s - %s - %s - %d: %f$\n", i+1,
+					itemsOrdered[i].getTitle(), itemsOrdered[i].getCategory(), itemsOrdered[i].getDirector(), itemsOrdered[i].getLength(), itemsOrdered[i].getCost());
+		}
+		System.out.println("Total cost: " + totalCost());
+		System.out.println("***************************************************");
+	}
 }
