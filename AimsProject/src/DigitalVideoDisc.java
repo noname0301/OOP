@@ -50,4 +50,7 @@ public class DigitalVideoDisc {
 		this.cost = cost;
 		this.id = nbDigitalVideoDiscs++;
 	}
+	public boolean isMatch(String title) {
+		return title == this.title;
+	}
 }

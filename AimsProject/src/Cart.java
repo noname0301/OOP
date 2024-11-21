@@ -52,6 +52,23 @@ public class Cart {
 		}
 		return cost;
 	}
-	
+	public DigitalVideoDisc searchById(int id) {
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOrdered[i].getId() == id) {
+				return itemsOrdered[i];
+			}
+		}
+		System.out.println("No dvd found");
+		return null;
+	}
+	public DigitalVideoDisc searchByTitle(String title) {
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOrdered[i].isMatch(title)) {
+				return itemsOrdered[i];
+			}
+		}
+		System.out.println("No dvd found");
+		return null;
+	}
 	
 }
