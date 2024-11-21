@@ -52,6 +52,7 @@ public class Cart {
 		}
 		return cost;
 	}
+<<<<<<< HEAD
 	
 	public void print() {
 		System.out.println("***********************CART***********************");
@@ -63,4 +64,25 @@ public class Cart {
 		System.out.println("Total cost: " + totalCost());
 		System.out.println("***************************************************");
 	}
+=======
+	public DigitalVideoDisc searchById(int id) {
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOrdered[i].getId() == id) {
+				return itemsOrdered[i];
+			}
+		}
+		System.out.println("No dvd found");
+		return null;
+	}
+	public DigitalVideoDisc searchByTitle(String title) {
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOrdered[i].isMatch(title)) {
+				return itemsOrdered[i];
+			}
+		}
+		System.out.println("No dvd found");
+		return null;
+	}
+	
+>>>>>>> feature/search-cart
 }
