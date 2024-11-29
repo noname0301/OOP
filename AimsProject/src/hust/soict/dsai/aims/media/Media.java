@@ -15,6 +15,11 @@ public class Media {
 	public Media() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Media(String title) {
+		this.title = title;
+	}
+	
 	public Media(int id, String title, String category, float cost) {
 		this.id = id;
 		this.title = title;
@@ -56,5 +61,15 @@ public class Media {
 	
 	public boolean equals(Media other) {
 		return this.getTitle() == other.getTitle();
+	}
+	
+	public void showDetails() {
+		System.out.println("\"" + this.title + "\" details:");
+		System.out.println("--------------------------------");
+		System.out.println("Title: " + this.title);
+		System.out.println("ID: " + this.id);
+		System.out.println("Category: " + this.category);
+		System.out.println("Cost: " + this.cost);
+		System.out.println("--------------------------------");
 	}
 }

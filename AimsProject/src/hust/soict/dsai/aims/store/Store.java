@@ -9,32 +9,39 @@ public class Store {
 	
 	public void addMedia(Media addedMedia) {
 		if (itemsInStore.contains(addedMedia)) {
-			System.out.println("Media is already in the list");
+			System.out.println("Media is already in store");
 			return;
 		}
 		itemsInStore.add(addedMedia);
-		System.out.println("Added" + addedMedia.getTitle());
+		System.out.println("\"" + addedMedia.getTitle() + "\" has been added to store");
 	}
 	
 	public void removeMedia(Media removedMedia) {
 		if (itemsInStore.contains(removedMedia)) {
 			itemsInStore.remove(removedMedia);
-			System.out.println("Removed" + removedMedia.getTitle());
+			System.out.println("\"" + removedMedia.getTitle() + "\" has been removed from store");
 			return;
 		}
 		System.out.println("No media found");
 	}
 	
-	public void showStore() {
-		System.out.println("Store items");
-		for (Media media : itemsInStore) {
-			System.out.println("+ " + media.getTitle());
+	public boolean showStore() {
+		if (itemsInStore.isEmpty()) {
+			System.out.println("No item in store");
+			return false;
 		}
+		System.out.println("Store items:");
+		System.out.println("--------------------------------");
+		for (Media media : itemsInStore) {
+			System.out.println("- " + media.getTitle());
+		}
+		System.out.println("--------------------------------");
+		return true;
 	}
 	
 	public Media findMedia(String title) {
 		for (Media media : itemsInStore) {
-			if (media.getTitle() == title) {
+			if (media.getTitle().equals(title)) {
 				return media;
 			}
 		}
