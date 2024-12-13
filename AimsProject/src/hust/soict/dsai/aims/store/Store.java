@@ -47,4 +47,10 @@ public class Store {
 		}
 		return null;
 	}
+	
+	public ArrayList<Media> getItemsInStore() {
+		for (int i = 0; i < 9; i++) itemsInStore.add(new Media(0, "Tarzan", "Cartoon", 19f));
+		System.out.println(itemsInStore.size());
+		return itemsInStore;
+	}
 }

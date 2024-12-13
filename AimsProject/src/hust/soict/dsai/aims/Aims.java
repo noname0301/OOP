@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.Book;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
@@ -104,7 +105,7 @@ public class Aims {
 	static Store store;
 	static Cart cart;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws PlayerException {
 		// TODO Auto-generated method stub
 		scanner = new Scanner(System.in);
 		store = new Store();
@@ -137,7 +138,7 @@ public class Aims {
 	}
 
 	
-	public static void viewStore() {
+	public static void viewStore() throws PlayerException {
 		while (true) {
 			System.out.println("_____________________________________");
 			if (!store.showStore()) {
@@ -166,7 +167,7 @@ public class Aims {
 		}
 	}
 	
-	public static void seeMediaDetail() {
+	public static void seeMediaDetail() throws PlayerException {
 		String title = getMediaTitleFromInput();
 		Media media = store.findMedia(title);
 		
@@ -213,7 +214,7 @@ public class Aims {
 		cart.addMedia(media);
 	}
 	
-	public static void playMedia() {
+	public static void playMedia() throws PlayerException {
 		String title = getMediaTitleFromInput();
 		Media media = store.findMedia(title);
 		if (media == null) {

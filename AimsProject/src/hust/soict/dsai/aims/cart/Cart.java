@@ -1,13 +1,15 @@
 package hust.soict.dsai.aims.cart;
 
-import java.util.ArrayList;
+
 import java.util.Collections;
 
 import hust.soict.dsai.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
 	
-	private ArrayList<Media> itemOrdered = new ArrayList<Media>();
+	private ObservableList<Media> itemOrdered = FXCollections.observableArrayList();
 	
 	public void addMedia(Media addedMedia) {
 		if (itemOrdered.contains(addedMedia)) {
@@ -64,5 +66,9 @@ public class Cart {
 	
 	public void sortCost() {
 		Collections.sort(itemOrdered, Media.COMPARE_BY_COST_TITLE);
+	}
+	
+	public ObservableList<Media> getItemsOrdered() {
+		return itemOrdered;
 	}
 }
